@@ -1,3 +1,10 @@
+<% form_tag search_index_path, :method => "get" do %>
+  <%= label_tag(:search, "Search Pattern by Name:") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", :pattern_name => nil) %>
+<% end %>
+
+
 ## Description
 
 This is a basic scaffolded Rails project using Docker with Ruby 2.6.5, Rails 5.2.4, and Postgres 12.1. This project can be used in lieu of installing Ruby, Rails and Postgres on your machine. When you run `docker-compose up`, Docker will create two containers on your machine: a Ruby/Rails environment running the local server and a Postgres container where your database is stored.

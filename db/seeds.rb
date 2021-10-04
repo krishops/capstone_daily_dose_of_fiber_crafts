@@ -19,17 +19,16 @@ include HTTParty
 
   def add_patterns
     auth = {username: 'read-97a558d4a7b688d6c3b94df4170ef72a', password: 'xL0iLOwxoAYoE6tzGtdXc4hjPhBMLDvpNlFXnoI6'}
-    search_results = HTTParty.get('https://api.ravelry.com/patterns/search.json',
+    search_results = HTTParty.get('https://api.ravelry.com/patterns/search.json?page_size=1000',
       basic_auth: auth)
-    # parsed_results = JSON.parse(search_results)
-    search_results.["patterns"].each do |result|
-      pattern = RavelryDatabase.create(
+    search_results["patterns"].each do |result|
+      pattern = Ravelry.create(
         pattern_name: result["name"],
         ravelry_id: result["id"],
         web_link: result["permalink"],
-        picture: result["first_photo"]["square_url"]
+        picture: result["first_photo"] ? result["first_photo"]["square_url"] : "" 
       )
-      puts "pattern: #{pattern.pattern_name}, id: #{pattern.ravelry_id}, link: #{pattern.web_link}, picture: #{pattern_picture}"
+      puts "pattern: #{pattern.pattern_name}, id: #{pattern.ravelry_id}, link: #{pattern.web_link}, picture: #{pattern.picture}"
     end
   end
 end

@@ -1,0 +1,25 @@
+<div class="row">
+<h4><u>Search Patterns</u></h2>
+</div>
+
+<div class="row">
+  <%= @patterns.each do |r| %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= r.pattern_name %></h5>
+          <p class="card-text">Ravelry Link: ravelry.com/<%=  r.web_link %></p>
+          <img src=<%= r.picture %> >
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+<% @patterns %>
+
+
+

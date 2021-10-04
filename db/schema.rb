@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_01_230351) do
+ActiveRecord::Schema.define(version: 2021_10_04_173838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_10_01_230351) do
     t.integer "ravelry_id"
   end
 
-  create_table "ravelry_databases", force: :cascade do |t|
+  create_table "ravelries", force: :cascade do |t|
     t.string "pattern_name"
     t.integer "ravelry_id"
     t.string "web_link"
