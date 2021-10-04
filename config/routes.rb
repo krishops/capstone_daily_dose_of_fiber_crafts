@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :patterns
   end
 
-  # get "/ravelries" => "ravelries#index"
+  get "/ravelries" => "ravelries#index"
 
 end

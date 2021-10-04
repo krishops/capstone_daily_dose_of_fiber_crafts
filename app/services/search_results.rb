@@ -6,7 +6,6 @@ include HTTParty
   end
 
   def get_search_results
-    response = HTTParty.get('https://api.ravelry.com/patterns/search.json')
   end
 
 end

@@ -27,7 +27,18 @@ include HTTParty
         ravelry_id: result["id"],
         web_link: result["permalink"],
         picture: result["first_photo"] ? result["first_photo"]["square_url"] : "" 
-      )
+      ) 
+      # pattern_details = HTTParty.get('https://api.ravelry.com/patterns.json?ids=' + result["id"],
+      #   basic_auth: auth)
+      #   pattern_details["patterns"][result["id"]].each do |result|
+      # full_pattern = Pattern.create(
+      #   pattern_name: result["name"],
+      #   web_link: result["permalink"],
+      #   craft_type: result[""]
+
+      # )
+
+      
       puts "pattern: #{pattern.pattern_name}, id: #{pattern.ravelry_id}, link: #{pattern.web_link}, picture: #{pattern.picture}"
     end
   end
