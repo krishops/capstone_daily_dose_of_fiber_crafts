@@ -8,6 +8,12 @@ class RavelriesController < ApplicationController
     @patterns = Ravelry.search(params[:search])
   end
 
+  def update
+    @user = User.find(params[:user_id])
+    @ravelry = Ravelry.find(params[:id])
+  end
+
+
   private
 
   def ravelry_params

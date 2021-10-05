@@ -17,8 +17,9 @@
       <div class="card">
         <div class="card-body">
           <h3 class="card-title"><%= r.pattern_name %></h3>
-          <a class="card-text" href="http://www.ravelry.com/<%= r.web_link %>">View on Ravelry</a>
+          <a class="card-text" href="http://www.ravelry.com/patterns/library/<%= r.web_link %>">View on Ravelry</a>
           <img src=<%= r.picture %> >
+          <button class="btn btn-classic" value="1" name="ravelry[user_id]" id="ravelry_user_ids_1">Add to Pattern List</button>
         </div>
       </div>
     </div>

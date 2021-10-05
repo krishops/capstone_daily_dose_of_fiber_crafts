@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_224308) do
+ActiveRecord::Schema.define(version: 2021_10_05_171802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 2021_10_04_224308) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ravelry_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "ravelry_id"
+    t.index ["ravelry_id"], name: "index_ravelry_users_on_ravelry_id"
+    t.index ["user_id"], name: "index_ravelry_users_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -45,13 +52,6 @@ ActiveRecord::Schema.define(version: 2021_10_04_224308) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "users_ravelries", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "ravelry_id"
-    t.index ["ravelry_id"], name: "index_users_ravelries_on_ravelry_id"
-    t.index ["user_id"], name: "index_users_ravelries_on_user_id"
   end
 
   add_foreign_key "patterns", "users"
