@@ -1,4 +1,4 @@
-class UsersRavelriesController < ApplicationController
+class RavelryUsersController < ApplicationController
 
   def create
     user = User.find(params:[user_id])
@@ -10,7 +10,7 @@ class UsersRavelriesController < ApplicationController
   private
 
   def user_ravelry_params
-    params.require(:user_ravelry).permit(:user_id, :ravelry_id)
+    params.require(:ravelry_user).permit(:user_id, :ravelry_id)
   end
 
 end
