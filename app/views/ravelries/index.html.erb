@@ -3,12 +3,13 @@
 </div>
 
 <div class="row">
-<%= form_tag ravelries_path, :method => "get" do %>
+<%= form_tag ravelry_index_path, :method => "get" do %>
   <%= label_tag(:search, "Search Pattern by Name:") %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag("Search", :pattern_name => nil) %>
 <% end %>
 </div>
+<br>
 
 <div class="row">
   <%= @patterns.each do |r| %>
@@ -16,7 +17,7 @@
       <div class="card">
         <div class="card-body">
           <h3 class="card-title"><%= r.pattern_name %></h3>
-          <p class="card-text">Ravelry Link: ravelry.com/<%=  r.web_link %></p>
+          <a class="card-text" href="http://www.ravelry.com/<%= r.web_link %>">View on Ravelry</a>
           <img src=<%= r.picture %> >
         </div>
       </div>

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'ravelries#index'
+  root to: 'landing#index'
   resources :users do 
     resources :patterns
   end
 
-  get "/ravelries" => "ravelries#index"
+  get "/ravelry/index" => "ravelries#index"
 
 end
