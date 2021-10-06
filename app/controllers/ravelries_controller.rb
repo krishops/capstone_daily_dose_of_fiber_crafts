@@ -1,7 +1,8 @@
 class RavelriesController < ApplicationController
 
   def index
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
+    @patterns = Ravelry.all
   end
 
   def search
@@ -9,11 +10,17 @@ class RavelriesController < ApplicationController
     #   @searched_pattern = Ravelry.where('pattern_name ILIKE ?', "%#{params[:pattern_name]}%")
     # else
       # @patterns = Ravelry.all
-    @patterns = Ravelry.search(params[:search])
-    if current_user != nil
-      @user = current_user
-    end
+    # @patterns = Ravelry.search(params[:search])
+    # if current_user != nil
+    #   @user = current_user
+    # end
     # redirect_to new_user_pattern_path(@user)
+    if params[:search].blank?
+      redirect_to search_path and return
+    else
+      @parameter = params[:search]
+      @results = Ravelry.all.where("lower(pattern_name) ilike :search", search: "%#{@parameter}%")
+    end
   end
 
   def update
@@ -22,8 +29,7 @@ class RavelriesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @patterns = RavelryUser.find_by(@user.id)
+    @patterns = Ravelry.all
     render :show
   end
 

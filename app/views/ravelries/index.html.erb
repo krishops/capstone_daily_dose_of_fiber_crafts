@@ -1,4 +1,21 @@
-<h1> TEST </h1>
+<h1> All Patterns </h1>
+
+<div class="row">
+<% @patterns.each do |r| %>
+    <div class="col-sm-2">
+      <div class="card">
+        <img class="card-img-top" src=<%=r.picture%> alt=<%r.pattern_name%>>
+        <div class="card-body">
+          <h5 class="card-title"><%= r.pattern_name %></h5>
+          <a class="card-text" href="http://www.ravelry.com/patterns/library/<%= r.web_link %>">View on Ravelry</a>
+          
+          <%# <%= button_to "Create", {action: "create" },  [:%>  
+          <button class="btn btn-sm btn-primary" value="1" name="ravelry[user_id]" id="ravelry_user_ids_1">Add to Pattern List</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 
 

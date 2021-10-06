@@ -21,17 +21,23 @@
             <li class="nav-item active">
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
+            <li class="nav-item">
+              <%= link_to 'All Patterns', ravelries_path, class: "nav-link" %>
             </li>
-              <li class="nav-item">
-              <a class="nav-link" href="/search">Search</a>
+            <li class="nav-item">
+              <%= form_tag(search_path, :class => "form-inline my-2 my-lg-0", :method => "get") do %>
             </li>
-            </li>
-              <li class="nav-item">
-              <%# <%= link_to 'My Patterns', user_patterns_path(@user), class: "nav-link" %> %>
-            </li>
-              
+                <li>
+                  <%= search_field_tag :search, params[:search], placeholder: "Search for patterns", class: "form-control mr-sm-2" %>
+                </li>
+                <li>
+                  <%= button_tag "Search", :class => "btn btn-outline-success my-2 my-sm-0", :pattern_name => nil %>
+                </li>
+              <% end %>
+              </li>
             </ul>
           </div>
+        </div>
       </div>
     </nav>   
     <%= yield %>

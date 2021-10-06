@@ -7,18 +7,18 @@ class Ravelry < ApplicationRecord
   validates :web_link, presence: true
   validates :picture, presence: true
 
-  def self.search(search)
-    if search
-      searched_pattern = Ravelry.find_by(pattern_name: search)
-        if searched_pattern
-          self.where(id: searched_pattern)
-        else
-          @patterns = Ravelry.all
-        end
-    else
-      @patterns = Ravelry.all
-    end
-  end
+  # def self.search(search)
+  #   if search
+  #     searched_pattern = Ravelry.find_by(pattern_name: search)
+  #       if searched_pattern
+  #         self.where(id: searched_pattern)
+  #       else
+  #         @patterns = Ravelry.all
+  #       end
+  #   else
+  #     @patterns = Ravelry.all
+  #   end
+  # end
 
   # scope :search, -> (name_parameter) { where("name ilike ?", "%#{name_parameter}%")}
 
