@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root to: 'landing#index'
 
   resources :users do 
-    resources :ravelries
+    resources :patterns
+  end
+
+  resources :ravelries do
+    resources :patterns
   end
 
   get "/search" => "ravelries#search"

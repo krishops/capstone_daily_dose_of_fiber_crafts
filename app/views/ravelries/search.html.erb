@@ -19,6 +19,7 @@
           <h3 class="card-title"><%= r.pattern_name %></h3>
           <a class="card-text" href="http://www.ravelry.com/patterns/library/<%= r.web_link %>">View on Ravelry</a>
           <img src= <%= r.picture %> >
+          <%# <%= button_to "Create", {action: "create" },  [:%>  
           <button class="btn btn-primary" value="1" name="ravelry[user_id]" id="ravelry_user_ids_1">Add to Pattern List</button>
         </div>
       </div>

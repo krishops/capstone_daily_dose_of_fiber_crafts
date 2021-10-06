@@ -1,3 +1,20 @@
+<div class="row">
+  <%= @patterns.each do |r| %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"><%= r.pattern_name %></h3>
+          <a class="card-text" href="http://www.ravelry.com/patterns/library/<%= r.web_link %>">View on Ravelry</a>
+          <img src= <%= r.picture %> >
+          <%# <%= button_to "Create", {action: "create" },  [:%>  
+          <button class="btn btn-primary" value="1" name="ravelry[user_id]" id="ravelry_user_ids_1">Add to Pattern List</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
 <% form_tag search_index_path, :method => "get" do %>
   <%= label_tag(:search, "Search Pattern by Name:") %>
   <%= text_field_tag :search, params[:search] %>

@@ -1,6 +1,6 @@
 class Ravelry < ApplicationRecord
-  has_many :ravelry_users
-  has_many :users, through: :ravelry_users
+  has_many :patterns
+  has_many :users, through: :patterns
 
   validates :pattern_name, presence: true
   validates :ravelry_id, presence: true

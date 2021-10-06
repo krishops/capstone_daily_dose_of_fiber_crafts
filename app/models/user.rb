@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :ravlery_users
-  has_many :ravelries, through: :ravelry_users
+  has_many :patterns
+  has_many :ravelries, through: :patterns
 end

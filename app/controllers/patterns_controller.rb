@@ -2,24 +2,20 @@ class PatternsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @pattern = @user.pattern
-    render: index
   end
 
-  def new
-    @user = User.find(params[:user_id])
-    @pattern = @user.patterns.new
-    render :new
-  end
-
-  def edit
-    @user = User.find(params[:user_id])
-    @pattern = Pattern.find(params[:id])
-    render :edit
+  def create
+    # @pattern = Pattern.new(pattern_params)
+    user = User.find(params:[:user_id])
+    ravelry = Ravelry.find(params[:ravelry_id])
+    @pattern = Pattern.new(user.id, ravelry.id)
+    redirect_to user_pattern_path
   end
 
   private
+
   def pattern_params
-    params.require(:pattern).permit(:pattern_name, :picture, :web_link, :user_id, :craft_type, :ravelry_id)
+    params.require(:pattern).permit(:user_id, :ravelry_id)
+  end
 
 end

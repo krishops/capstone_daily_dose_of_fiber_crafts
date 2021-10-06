@@ -13,6 +13,7 @@ class RavelriesController < ApplicationController
     if current_user != nil
       @user = current_user
     end
+    # redirect_to new_user_pattern_path(@user)
   end
 
   def update
