@@ -13,6 +13,7 @@ class Seed
 include HTTParty
 
   def self.begin
+    Ravelry.destroy_all
     seed = Seed.new
     seed.add_patterns
   end
@@ -26,7 +27,7 @@ include HTTParty
         pattern_name: result["name"],
         ravelry_id: result["id"],
         web_link: result["permalink"],
-        picture: result["first_photo"] ? result["first_photo"]["square_url"] : "" 
+        picture: result["first_photo"] ? result["first_photo"]["small_url"] : "" 
       ) 
       # pattern_details = HTTParty.get('https://api.ravelry.com/patterns.json?ids=' + result["id"],
       #   basic_auth: auth)

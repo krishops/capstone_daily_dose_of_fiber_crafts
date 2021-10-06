@@ -14,13 +14,49 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
+
+@font-face {
+  font-family: "Pacifico";
+  src: url('/fonts/Pacifico-Regular.ttf');
+}
 
 //  .card {
 //    border-width: 5px;
 //    border-color: black;
 //  }
 
+body {
+  background: linear-gradient(90deg, rgb(248, 191, 85), rgb(246, 142, 246));
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position-y: right;
+  min-height: 100vh;
+}
+
 .form-inline {
   align-items: right;
+}
+
+h1, h2, h3, h4 {
+  color:rgb(160, 11, 160);
+  font-family: "Pacifico";
+}
+
+.btn {
+  background-color: rgb(160, 11, 160);
+  color: antiquewhite;
+} 
+
+.card {
+  background-color: antiquewhite;
+}
+
+.navbar {
+  background-color: antiquewhite;
+  color:rgb(246, 142, 246)
+}
+
+.navbar-brand, .nav-link {
+  color:rgb(160, 11, 160)
 }

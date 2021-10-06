@@ -6,11 +6,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
   </head>
 
   <body class="container">
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md">
       <div class="container-fluid">
         <a class="navbar-brand abs" href="/">Daily Dose of Fiber Crafts</a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
@@ -34,7 +35,6 @@
                   <%= button_tag "Search", :class => "btn btn-outline-success my-2 my-sm-0", :pattern_name => nil %>
                 </li>
               <% end %>
-              </li>
             </ul>
           </div>
         </div>

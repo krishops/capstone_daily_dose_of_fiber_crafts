@@ -33,11 +33,27 @@ class RavelriesController < ApplicationController
     render :show
   end
 
+  # def add_pattern
+  #   puts "test"
+  #   # @user = current_user
+  #   # @ravelry = Ravelry.find(params[:id])
+  #   # @user.ravelries << @ravelry
+  #   # flash[:notice] = 'Pattern was saved.'
+  #   # redirect_to user_path(@user)
+  # end
+
+  def create
+    @user = current_user
+    @ravelry = Ravelry.find(params[:id])
+    @user.ravelries << @ravelry
+    flash[:notice] = 'Pattern was saved.'
+    redirect_to user_path(@user)
+  end
 
   private
 
   def ravelry_params
-    params.require(:ravelry).permit(:pattern_name, :ravelry_id, :search)
+    params.require(:ravelry).permit(:pattern_name, :ravelry_id, :search, :id)
   end
 
 
