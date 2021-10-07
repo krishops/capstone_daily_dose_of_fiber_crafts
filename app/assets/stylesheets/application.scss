@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: "Pacifico";
-  src: url('/fonts/Pacifico-Regular.ttf');
+  src: url("Pacifico-Regular.ttf");
 }
 
 //  .card {
@@ -27,7 +27,7 @@
 //  }
 
 body {
-  background: linear-gradient(90deg, rgb(248, 191, 85), rgb(246, 142, 246));
+  background: radial-gradient(antiquewhite, rgb(195, 51, 15));
   background-size:cover;
   background-repeat:no-repeat;
   background-position-y: right;
@@ -39,24 +39,36 @@ body {
 }
 
 h1, h2, h3, h4 {
-  color:rgb(160, 11, 160);
-  font-family: "Pacifico";
+  color: antiquewhite;
+  font-family: Pacifico;
+  padding: 1em;
+  align-self: center;
 }
 
 .btn {
-  background-color: rgb(160, 11, 160);
+  background-color: rgb(195, 51, 15);
   color: antiquewhite;
 } 
 
 .card {
   background-color: antiquewhite;
+  margin-bottom: 2em;
+}
+.card-title {
+  color:rgb(195, 51, 15);
+  font-family: Cambria;
 }
 
 .navbar {
   background-color: antiquewhite;
-  color:rgb(246, 142, 246)
+  color:rgb(195, 51, 15);
+  font-family: Cambria;
 }
 
 .navbar-brand, .nav-link {
-  color:rgb(160, 11, 160)
+  color: rgb(195, 51, 15);
 }
+
+// .row {
+//   padding-bottom: 5em;
+// }

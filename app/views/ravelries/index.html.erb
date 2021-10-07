@@ -10,7 +10,7 @@
           <a class="card-text" href="http://www.ravelry.com/patterns/library/<%= r.web_link %>">View on Ravelry</a>
           
           <%# <%= button_to "Create", {action: "create" },  [:%>  
-          <%= button_to "Create" %>
+          <%= button_to "Save Pattern", class: "btn btn-primary", :method => :post, :params => {:id => r.id} %>
 
 
         </div>

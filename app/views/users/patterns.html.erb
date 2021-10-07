@@ -1,0 +1,15 @@
+<h1> My Saved Patterns </h1>
+
+<div class="row">
+<% @patterns.each do |r| %>
+    <div class="col-sm-2">
+      <div class="card">
+        <img class="card-img-top" src=<%=r.ravelry.picture%> alt=<%r.ravelry.pattern_name%>>
+        <div class="card-body">
+          <h5 class="card-title"><%= r.ravelry.pattern_name %></h5>
+          <a class="card-text" href="http://www.ravelry.com/patterns/library/<%= r.ravelry.web_link %>">View on Ravelry</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

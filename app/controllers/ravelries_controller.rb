@@ -3,6 +3,7 @@ class RavelriesController < ApplicationController
   def index
     # @user = User.find(params[:user_id])
     @patterns = Ravelry.all
+    @user = current_user
   end
 
   def search
@@ -15,6 +16,7 @@ class RavelriesController < ApplicationController
     #   @user = current_user
     # end
     # redirect_to new_user_pattern_path(@user)
+    @user = current_user
     if params[:search].blank?
       redirect_to search_path and return
     else
@@ -47,7 +49,6 @@ class RavelriesController < ApplicationController
     @ravelry = Ravelry.find(params[:id])
     @user.ravelries << @ravelry
     flash[:notice] = 'Pattern was saved.'
-    redirect_to user_path(@user)
   end
 
   private
